@@ -6,4 +6,16 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    color: ${(props) => props.theme['base-subtitle']};
+    background-color: ${(props) => props.theme.background};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
 `
