@@ -5,9 +5,9 @@ import {
   HeaderContainer,
   LocationContainer,
 } from './styles'
-import logo from '../../assets/logo.svg'
+import logo from '@/assets/logo.svg'
 
-import { defaultTheme } from '../../styles/themes/default'
+import { defaultTheme } from '@/styles/themes/default'
 
 export function Header() {
   return (
