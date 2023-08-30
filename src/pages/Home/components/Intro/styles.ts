@@ -4,6 +4,7 @@ import { defaultTheme } from '@/styles/themes/default'
 
 export const IntroContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 
@@ -18,6 +19,15 @@ export const IntroContainer = styled.div`
   box-shadow:
     0px -30px 30px -20px ${defaultTheme.background} inset,
     0px 30px 30px -20px ${defaultTheme.background} inset;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+
+    img {
+      height: 20rem;
+      margin-top: 4.125rem;
+    }
+  }
 `
 
 export const TitleContainer = styled.div`
@@ -32,22 +42,26 @@ export const TitleContainer = styled.div`
     font-family: 'Baloo 2', cursive;
     font-size: 48px;
   }
+
+  @media (max-width: 768px) {
+    width: 29rem;
+  }
 `
 
 export const ItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 1.25rem;
-
   div {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
 `
 
 export const ItemContainer = styled.div`
   width: 18rem;
+  margin-bottom: 1.25rem;
 `
 
 export const ItemIcon = styled.div`

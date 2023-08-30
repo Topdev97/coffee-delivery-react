@@ -11,6 +11,10 @@ export const HeaderContainer = styled.div`
     display: flex;
     gap: 0.75rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `
 
 const NavigationBase = styled.div`
