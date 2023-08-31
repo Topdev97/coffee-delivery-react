@@ -64,10 +64,6 @@ export const BaseButton = styled.button`
     background-color: ${(props) => props.theme['base-hover']};
   }
 
-  &:active {
-    opacity: 80%;
-  }
-
   &:focus {
     background-color: ${(props) => props.theme['purple-light']};
     border: 1px solid ${(props) => props.theme.purple};

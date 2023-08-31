@@ -31,10 +31,6 @@ export const ConfirmButton = styled.button`
     background-color: ${(props) => props.theme['yellow-dark']};
   }
 
-  &:active {
-    opacity: 80%;
-  }
-
   @media (max-width: 768px) {
     font-size: 12px;
   }
