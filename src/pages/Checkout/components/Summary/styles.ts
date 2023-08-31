@@ -10,6 +10,11 @@ export const SummaryContainer = styled.div`
   border-radius: 6px 44px;
 
   background-color: ${(props) => props.theme['base-card']};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    /* margin-right: 12.5rem; */
+  }
 `
 
 export const CardContainer = styled.div`
@@ -111,7 +116,7 @@ export const TotalTextContainer = styled.div`
   }
 `
 
-export const ConfirmButton = styled.button`
+export const ConfirmButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
