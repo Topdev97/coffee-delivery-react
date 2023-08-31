@@ -5,7 +5,7 @@ export const PaymentContainer = styled.div`
   flex-direction: column;
 
   gap: 2rem;
-  width: 40rem;
+  /* width: 40rem; */
   padding: 2.5rem;
   border-radius: 6px;
 
@@ -24,10 +24,20 @@ export const PaymentTitle = styled.div`
     font-size: 14px;
     color: ${(props) => props.theme['base-text']};
   }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 12px;
+    }
+  }
 `
 export const PaymentFormContainer = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 export const BaseButton = styled.button`

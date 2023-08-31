@@ -5,7 +5,7 @@ export const AddressContainer = styled.div`
   flex-direction: column;
 
   gap: 2rem;
-  width: 40rem;
+  /* width: 40rem; */
   padding: 2.5rem;
   border-radius: 6px;
 
@@ -24,6 +24,12 @@ export const AddressTitle = styled.div`
     font-size: 14px;
     color: ${(props) => props.theme['base-text']};
   }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 12px;
+    }
+  }
 `
 export const AddressFormContainer = styled.div`
   display: flex;
@@ -34,6 +40,12 @@ export const AddressFormContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    div {
+      flex-wrap: wrap;
+    }
   }
 `
 
@@ -58,21 +70,41 @@ export const BaseInput = styled.input`
     outline: none;
     border: 1px solid ${(props) => props.theme['yellow-dark']};
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 export const ZipCodeInput = styled(BaseInput)`
   width: 12.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const StreetInput = styled(BaseInput)``
 
-export const NumberInput = styled(BaseInput)``
+export const NumberInput = styled(BaseInput)`
+  width: 12.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 
 export const AdditionalAddressDetailInput = styled(BaseInput)`
   flex-grow: 1;
 `
 
-export const TownInput = styled(BaseInput)``
+export const TownInput = styled(BaseInput)`
+  width: 12.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 
 export const CityInput = styled(BaseInput)`
   flex-grow: 1;
@@ -80,4 +112,8 @@ export const CityInput = styled(BaseInput)`
 
 export const StateInput = styled(BaseInput)`
   width: 3.75rem;
+
+  @media (max-width: 768px) {
+    width: 4rem;
+  }
 `
