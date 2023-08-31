@@ -11,6 +11,10 @@ export const HeaderContainer = styled.div`
     display: flex;
     gap: 0.75rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `
 
 const NavigationBase = styled.div`
@@ -36,6 +40,8 @@ export const CartContainer = styled(NavigationBase)`
 
   color: ${(props) => props.theme['yellow-dark']};
   background-color: ${(props) => props.theme['yellow-light']};
+
+  transition: 100ms;
 `
 
 export const CartNotification = styled.div`
