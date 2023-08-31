@@ -17,6 +17,12 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
   }
+
+  @media (max-width: 768px) {
+    width: auto;
+    padding: 0;
+    align-items: center;
+  }
 `
 
 export const CoffeeContainer = styled.div`
@@ -48,6 +54,23 @@ export const CoffeeContainer = styled.div`
     right: 0;
 
     margin: auto;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0rem;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+`
+
+export const CoffeesContainer = styled.div`
+  display: flex;
+
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 `
 
@@ -98,10 +121,6 @@ export const Buy = styled.div`
   position: absolute;
   bottom: 0;
   margin-bottom: 1.25rem;
-
-  div {
-    display: flex;
-  }
 `
 
 export const CartContainer = styled.div`
@@ -113,7 +132,19 @@ export const CartContainer = styled.div`
 
   border-radius: 6px;
   background-color: ${(props) => props.theme['purple-dark']};
+
+  transition: 100ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.theme.purple};
+  }
+
+  &:active {
+    opacity: 80%;
+  }
 `
+
 export const PriceContainer = styled.div`
   display: flex;
   align-items: center;

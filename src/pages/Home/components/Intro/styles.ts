@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
 import backgroundImage from '@/assets/background.svg'
-import { defaultTheme } from '@/styles/themes/default'
 
 export const IntroContainer = styled.div`
   display: flex;
@@ -17,14 +16,17 @@ export const IntroContainer = styled.div`
   background-image: url(${backgroundImage});
 
   box-shadow:
-    0px -30px 30px -20px ${defaultTheme.background} inset,
-    0px 30px 30px -20px ${defaultTheme.background} inset;
+    0px -30px 30px -20px ${(props) => props.theme.background} inset,
+    0px 30px 30px -20px ${(props) => props.theme.background} inset;
 
   @media (max-width: 768px) {
     padding: 2rem;
+    width: auto;
+    height: auto;
+    justify-content: center;
 
     img {
-      height: 20rem;
+      height: 15rem;
       margin-top: 4.125rem;
     }
   }
@@ -44,7 +46,7 @@ export const TitleContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 29rem;
+    width: auto;
   }
 `
 
@@ -57,11 +59,21 @@ export const ItemsContainer = styled.div`
     flex-wrap: wrap;
     align-items: center;
   }
+
+  @media (max-width: 768px) {
+    div {
+      /* width: 100px; */
+    }
+  }
 `
 
 export const ItemContainer = styled.div`
   width: 18rem;
   margin-bottom: 1.25rem;
+
+  @media (max-width: 768px) {
+    /* width: auto; */
+  }
 `
 
 export const ItemIcon = styled.div`

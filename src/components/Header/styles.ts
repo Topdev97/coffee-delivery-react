@@ -40,6 +40,8 @@ export const CartContainer = styled(NavigationBase)`
 
   color: ${(props) => props.theme['yellow-dark']};
   background-color: ${(props) => props.theme['yellow-light']};
+
+  transition: 100ms;
 `
 
 export const CartNotification = styled.div`

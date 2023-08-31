@@ -19,6 +19,14 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
+  img, p, span {  
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
   @media (max-width: 768px) {
     html {
       font-size: 87.5%;

@@ -3,6 +3,7 @@ import {
   Buy,
   CartContainer,
   CoffeeContainer,
+  CoffeesContainer,
   ContentContainer,
   CounterContainer,
   Description,
@@ -36,9 +37,19 @@ function CoffeeCard({ coffee }: CoffeeCardProps) {
         </PriceContainer>
         <div>
           <CounterContainer>
-            <Minus size={14} weight="bold" color={defaultTheme.purple} />
+            <Minus
+              cursor="pointer"
+              size={14}
+              weight="bold"
+              color={defaultTheme.purple}
+            />
             <span>1</span>
-            <Plus size={14} weight="bold" color={defaultTheme.purple} />
+            <Plus
+              cursor="pointer"
+              size={14}
+              weight="bold"
+              color={defaultTheme.purple}
+            />
           </CounterContainer>
           <CartContainer>
             <ShoppingCart
@@ -57,11 +68,11 @@ export function Content() {
   return (
     <ContentContainer>
       <p>Our coffees</p>
-      <div>
+      <CoffeesContainer>
         {coffees.map((coffee) => {
           return <CoffeeCard key={coffee.id} coffee={coffee} />
         })}
-      </div>
+      </CoffeesContainer>
     </ContentContainer>
   )
 }
