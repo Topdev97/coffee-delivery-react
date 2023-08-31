@@ -51,8 +51,18 @@ export const BaseInput = styled.input`
   background-color: ${(props) => props.theme['base-input']};
   height: 2.625rem;
 
+  font-size: 14px;
+  color: ${(props) => props.theme['base-text']};
+
+  transition: 100ms;
+
   ::placeholder {
     color: ${(props) => props.theme['base-label']};
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme['yellow-dark']};
   }
 `
 
@@ -75,5 +85,5 @@ export const CityInput = styled(BaseInput)`
 `
 
 export const StateInput = styled(BaseInput)`
-  width: 3.95rem;
+  width: 3.75rem;
 `
