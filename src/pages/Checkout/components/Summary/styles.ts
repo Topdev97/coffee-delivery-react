@@ -6,7 +6,36 @@ export const SummaryContainer = styled.div`
   gap: 0.75rem;
 
   padding: 2.5rem;
-  border-radius: 6px;
+  border-radius: 6px 44px;
 
   background-color: ${(props) => props.theme['base-card']};
+`
+
+export const ConfirmButton = styled.button`
+  display: flex;
+  padding: 12px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: ${(props) => props.theme.white};
+  background-color: ${(props) => props.theme.yellow};
+
+  transition: 100ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.theme['yellow-dark']};
+  }
+
+  &:active {
+    opacity: 80%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `

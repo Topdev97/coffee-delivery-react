@@ -1,5 +1,9 @@
-import { SummaryContainer } from './styles'
+import { ConfirmButton, SummaryContainer } from './styles'
 
 export function Summary() {
-  return <SummaryContainer>TODO...</SummaryContainer>
+  return (
+    <SummaryContainer>
+      <ConfirmButton>Confirm order</ConfirmButton>
+    </SummaryContainer>
+  )
 }

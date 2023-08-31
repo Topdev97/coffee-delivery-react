@@ -28,9 +28,7 @@ export function Header() {
               weight="fill"
               color={defaultTheme['yellow-dark']}
             />
-            <CartNotification>
-              <span>0</span>
-            </CartNotification>
+            <CartNotification>0</CartNotification>
           </CartContainer>
         </NavLink>
       </nav>
