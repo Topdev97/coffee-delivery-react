@@ -45,7 +45,12 @@ export const CartContainer = styled(NavigationBase)`
 `
 
 export const CartNotification = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: absolute;
+
   right: -8px;
   top: -8px;
 
@@ -59,10 +64,4 @@ export const CartNotification = styled.div`
 
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme['yellow-dark']};
-
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 `

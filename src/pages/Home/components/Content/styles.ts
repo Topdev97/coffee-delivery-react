@@ -123,12 +123,14 @@ export const Buy = styled.div`
   margin-bottom: 1.25rem;
 `
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.button`
   display: flex;
   align-items: center;
 
   padding: 0.5rem;
   margin-left: 0.5rem;
+
+  border: none;
 
   border-radius: 6px;
   background-color: ${(props) => props.theme['purple-dark']};
@@ -138,10 +140,6 @@ export const CartContainer = styled.div`
   &:hover {
     cursor: pointer;
     background-color: ${(props) => props.theme.purple};
-  }
-
-  &:active {
-    opacity: 80%;
   }
 `
 

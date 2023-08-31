@@ -1,14 +1,15 @@
+import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from 'phosphor-react'
+
+import logo from '@/assets/logo.svg'
+import { defaultTheme } from '@/styles/themes/default'
+
 import {
   CartContainer,
   CartNotification,
   HeaderContainer,
   LocationContainer,
 } from './styles'
-import logo from '@/assets/logo.svg'
-
-import { defaultTheme } from '@/styles/themes/default'
-import { NavLink } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -28,9 +29,7 @@ export function Header() {
               weight="fill"
               color={defaultTheme['yellow-dark']}
             />
-            <CartNotification>
-              <span>0</span>
-            </CartNotification>
+            <CartNotification>0</CartNotification>
           </CartContainer>
         </NavLink>
       </nav>
