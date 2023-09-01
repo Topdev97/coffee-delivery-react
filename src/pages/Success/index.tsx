@@ -5,9 +5,18 @@ import {
   Title,
   Message,
   TitleContainer,
-  OrderInfoContainer,
+  GradientBorder,
   ContentContainer,
+  OrderInfoContainer,
+  OrderInfo,
+  Info,
+  MapPinContainer,
+  TimerContainer,
+  DollarSignContainer,
+  InfoMessage,
 } from './styles'
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { defaultTheme } from '@/styles/themes/default'
 
 export function Success() {
   return (
@@ -17,8 +26,54 @@ export function Success() {
         <Message>Sit back and relax while we bring your coffee to you</Message>
       </TitleContainer>
       <ContentContainer>
-        <OrderInfoContainer>lalala</OrderInfoContainer>
-        <img src={successImage} alt="" />
+        <OrderInfoContainer>
+          <GradientBorder />
+          <OrderInfo>
+            <Info>
+              <MapPinContainer>
+                <MapPin
+                  weight="fill"
+                  size={16}
+                  color={defaultTheme.background}
+                />
+              </MapPinContainer>
+              <InfoMessage>
+                <p>
+                  Deliver to <span>street name</span>
+                </p>
+                <p>Town, city, state</p>
+              </InfoMessage>
+            </Info>
+            <Info>
+              <TimerContainer>
+                <Timer
+                  weight="fill"
+                  size={16}
+                  color={defaultTheme.background}
+                />
+              </TimerContainer>
+              <InfoMessage>
+                <p>Estimated delivery</p>
+                <span>20 min - 30 min</span>
+              </InfoMessage>
+            </Info>
+            <Info>
+              <DollarSignContainer>
+                <CurrencyDollar size={16} color={defaultTheme.background} />
+              </DollarSignContainer>
+              <InfoMessage>
+                <p>Payment upon delivery</p>
+                <span>Credit Card</span>
+              </InfoMessage>
+            </Info>
+          </OrderInfo>
+        </OrderInfoContainer>
+        {/* <div> */}
+        <img
+          src={successImage}
+          alt="Image of a delivery person on a motorcicle bringing your order to you"
+        />
+        {/* </div> */}
       </ContentContainer>
     </SuccessContainer>
   )

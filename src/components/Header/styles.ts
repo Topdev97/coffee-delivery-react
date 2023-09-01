@@ -28,6 +28,10 @@ const NavigationBase = styled.div`
   span {
     text-transform: uppercase;
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 export const LocationContainer = styled(NavigationBase)`
