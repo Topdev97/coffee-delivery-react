@@ -16,6 +16,7 @@ import {
 } from './styles'
 
 import coffeeImage from '@/assets/coffees/americano.svg'
+import { NavLink } from 'react-router-dom'
 
 function Card() {
   return (
@@ -81,7 +82,9 @@ export function Summary() {
     <SummaryContainer>
       <Card />
       <SummaryContent />
-      <ConfirmButton>Confirm order</ConfirmButton>
+      <NavLink to="/success" title="Success" style={{ textDecoration: 'none' }}>
+        <ConfirmButton>Confirm order</ConfirmButton>
+      </NavLink>
     </SummaryContainer>
   )
 }

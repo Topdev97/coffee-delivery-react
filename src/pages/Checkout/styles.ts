@@ -31,4 +31,8 @@ export const SummaryContainer = styled.div`
   gap: 0.75rem;
   width: 28rem;
   height: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `

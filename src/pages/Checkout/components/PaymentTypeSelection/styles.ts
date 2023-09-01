@@ -5,7 +5,6 @@ export const PaymentContainer = styled.div`
   flex-direction: column;
 
   gap: 2rem;
-  /* width: 40rem; */
   padding: 2.5rem;
   border-radius: 6px;
 
