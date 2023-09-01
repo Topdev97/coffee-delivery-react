@@ -1,4 +1,7 @@
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+
 import successImage from '@/assets/success-image.svg'
+import { defaultTheme } from '@/styles/themes/default'
 
 import {
   SuccessContainer,
@@ -15,8 +18,6 @@ import {
   DollarSignContainer,
   InfoMessage,
 } from './styles'
-import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { defaultTheme } from '@/styles/themes/default'
 
 export function Success() {
   return (
@@ -68,12 +69,10 @@ export function Success() {
             </Info>
           </OrderInfo>
         </OrderInfoContainer>
-        {/* <div> */}
         <img
           src={successImage}
-          alt="Image of a delivery person on a motorcicle bringing your order to you"
+          alt="Image of a delivery person on a motorcycle bringing your order to you"
         />
-        {/* </div> */}
       </ContentContainer>
     </SuccessContainer>
   )
