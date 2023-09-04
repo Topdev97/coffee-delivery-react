@@ -123,7 +123,7 @@ export const Buy = styled.div`
   margin-bottom: 1.25rem;
 `
 
-export const CartContainer = styled.button`
+export const CartButton = styled.button`
   display: flex;
   align-items: center;
 
@@ -170,3 +170,28 @@ export const CounterContainer = styled.div`
     color: ${(props) => props.theme['base-title']};
   }
 `
+
+export const CounterBaseButton = styled.button`
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-bottom: 2px;
+
+  color: ${(props) => props.theme.purple};
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+  transition: 100ms;
+
+  &:active {
+    color: ${(props) => props.theme['purple-dark']};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 50%;
+  }
+`
+
+export const MinusButton = styled(CounterBaseButton)``
+export const PlusButton = styled(CounterBaseButton)``

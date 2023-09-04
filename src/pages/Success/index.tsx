@@ -1,4 +1,10 @@
+import { useLocation } from 'react-router-dom'
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+
+import { SuccessState } from '../Checkout'
+
 import successImage from '@/assets/success-image.svg'
+import { defaultTheme } from '@/styles/themes/default'
 
 import {
   SuccessContainer,
@@ -15,10 +21,13 @@ import {
   DollarSignContainer,
   InfoMessage,
 } from './styles'
-import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { defaultTheme } from '@/styles/themes/default'
 
 export function Success() {
+  const location = useLocation()
+
+  const { address, paymentType } = location.state as SuccessState
+  const { street, number, town, city, state } = address
+
   return (
     <SuccessContainer>
       <TitleContainer>
@@ -39,9 +48,14 @@ export function Success() {
               </MapPinContainer>
               <InfoMessage>
                 <p>
-                  Deliver to <span>street name</span>
+                  Deliver to{' '}
+                  <span>
+                    {number} {street}
+                  </span>
                 </p>
-                <p>Town, city, state</p>
+                <p>
+                  {town}, {city}, {state}
+                </p>
               </InfoMessage>
             </Info>
             <Info>
@@ -63,17 +77,15 @@ export function Success() {
               </DollarSignContainer>
               <InfoMessage>
                 <p>Payment upon delivery</p>
-                <span>Credit Card</span>
+                <span>{paymentType}</span>
               </InfoMessage>
             </Info>
           </OrderInfo>
         </OrderInfoContainer>
-        {/* <div> */}
         <img
           src={successImage}
-          alt="Image of a delivery person on a motorcicle bringing your order to you"
+          alt="Image of a delivery person on a motorcycle bringing your order to you"
         />
-        {/* </div> */}
       </ContentContainer>
     </SuccessContainer>
   )

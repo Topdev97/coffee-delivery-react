@@ -25,16 +25,58 @@ export function AddressForm() {
         </AddressTitle>
       </AddressTitleContainer>
       <AddressFormContainer>
-        <ZipCodeInput placeholder="Zip Code" />
-        <StreetInput placeholder="Street" />
+        <ZipCodeInput
+          id="zipCode"
+          type="text"
+          name="zipCode"
+          placeholder="Zip Code"
+          required
+        />
+        <StreetInput
+          id="street"
+          type="text"
+          name="street"
+          placeholder="Street"
+          required
+        />
         <div>
-          <NumberInput placeholder="Number" />
-          <AdditionalAddressDetailInput placeholder="Additional address information" />
+          <NumberInput
+            id="number"
+            type="text"
+            name="number"
+            placeholder="Number"
+            required
+          />
+          <AdditionalAddressDetailInput
+            id="additionalInfo"
+            type="text"
+            name="additionalInfo"
+            placeholder="Additional address information (optional)"
+          />
         </div>
         <div>
-          <TownInput placeholder="Town" />
-          <CityInput placeholder="City" />
-          <StateInput placeholder="State" />
+          <TownInput
+            id="town"
+            type="text"
+            name="town"
+            placeholder="Town"
+            required
+          />
+          <CityInput
+            id="city"
+            type="text"
+            name="city"
+            placeholder="City"
+            required
+          />
+          <StateInput
+            id="state"
+            type="text"
+            name="state"
+            placeholder="State"
+            maxLength={2}
+            required
+          />
         </div>
       </AddressFormContainer>
     </AddressContainer>

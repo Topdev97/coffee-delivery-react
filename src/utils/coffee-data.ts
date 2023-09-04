@@ -1,3 +1,5 @@
+import { Coffee } from '@/reducers/reducer'
+
 import espresso from '@/assets/coffees/espresso.svg'
 import americano from '@/assets/coffees/americano.svg'
 import creamyEspresso from '@/assets/coffees/creamy-espresso.svg'
@@ -12,15 +14,6 @@ import cubano from '@/assets/coffees/cubano.svg'
 import hawaian from '@/assets/coffees/hawaian.svg'
 import arabic from '@/assets/coffees/arabic.svg'
 import irish from '@/assets/coffees/irish.svg'
-
-export interface Coffee {
-  id: number
-  image: string
-  title: string
-  description: string
-  price: string
-  tags: string[]
-}
 
 export const coffees: Coffee[] = [
   {
