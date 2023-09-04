@@ -116,7 +116,7 @@ export const TotalTextContainer = styled.div`
   }
 `
 
-export const ConfirmButton = styled.div`
+export const ConfirmButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

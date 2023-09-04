@@ -1,5 +1,6 @@
-import { defaultTheme } from '@/styles/themes/default'
 import { Minus, Plus, Trash } from 'phosphor-react'
+import { defaultTheme } from '@/styles/themes/default'
+
 import {
   ConfirmButton,
   Divider,
@@ -16,7 +17,6 @@ import {
 } from './styles'
 
 import coffeeImage from '@/assets/coffees/americano.svg'
-import { NavLink } from 'react-router-dom'
 
 function Card() {
   return (
@@ -82,9 +82,7 @@ export function Summary() {
     <SummaryContainer>
       <Card />
       <SummaryContent />
-      <NavLink to="/success" title="Success" style={{ textDecoration: 'none' }}>
-        <ConfirmButton>Confirm order</ConfirmButton>
-      </NavLink>
+      <ConfirmButton>Confirm order</ConfirmButton>
     </SummaryContainer>
   )
 }

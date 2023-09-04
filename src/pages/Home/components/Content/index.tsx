@@ -1,12 +1,14 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import {
   Buy,
-  CartContainer,
+  CartButton,
   CoffeeContainer,
   CoffeesContainer,
   ContentContainer,
   CounterContainer,
   Description,
+  MinusButton,
+  PlusButton,
   PriceContainer,
   PriceNumber,
   Tag,
@@ -15,12 +17,31 @@ import {
 } from './styles'
 import { defaultTheme } from '@/styles/themes/default'
 import { Coffee, coffees } from '@/utils/coffee-data'
+import { useState } from 'react'
 
 interface CoffeeCardProps {
   coffee: Coffee
 }
 
 function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const [quantity, setQuantity] = useState(1)
+
+  function handleAddQuantity() {
+    if (quantity === 9) return
+    setQuantity((state) => state + 1)
+  }
+
+  function handleRemoveQuantity() {
+    if (quantity === 1) return
+    setQuantity((state) => state - 1)
+  }
+
+  function handleAddToCart() {
+    // TODO: Update context
+
+    setQuantity(1)
+  }
+
   return (
     <CoffeeContainer>
       <img src={coffee.image} alt="Coffee image" />
@@ -37,27 +58,21 @@ function CoffeeCard({ coffee }: CoffeeCardProps) {
         </PriceContainer>
         <div>
           <CounterContainer>
-            <Minus
-              cursor="pointer"
-              size={14}
-              weight="bold"
-              color={defaultTheme.purple}
-            />
-            <span>1</span>
-            <Plus
-              cursor="pointer"
-              size={14}
-              weight="bold"
-              color={defaultTheme.purple}
-            />
+            <MinusButton onClick={handleRemoveQuantity}>
+              <Minus size={14} weight="bold" color={defaultTheme.purple} />
+            </MinusButton>
+            <span>{quantity}</span>
+            <PlusButton onClick={handleAddQuantity}>
+              <Plus size={14} weight="bold" color={defaultTheme.purple} />
+            </PlusButton>
           </CounterContainer>
-          <CartContainer>
+          <CartButton onClick={handleAddToCart}>
             <ShoppingCart
               size={22}
               weight="fill"
               color={defaultTheme['base-card']}
             />
-          </CartContainer>
+          </CartButton>
         </div>
       </Buy>
     </CoffeeContainer>

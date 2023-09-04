@@ -123,7 +123,7 @@ export const Buy = styled.div`
   margin-bottom: 1.25rem;
 `
 
-export const CartContainer = styled.button`
+export const CartButton = styled.button`
   display: flex;
   align-items: center;
 
@@ -170,3 +170,17 @@ export const CounterContainer = styled.div`
     color: ${(props) => props.theme['base-title']};
   }
 `
+
+export const CounterBaseButton = styled.button`
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-bottom: 2px;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+`
+
+export const MinusButton = styled(CounterBaseButton)``
+export const PlusButton = styled(CounterBaseButton)``
