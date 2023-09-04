@@ -10,6 +10,7 @@ export const PaymentContainer = styled.div`
 
   background-color: ${(props) => props.theme['base-card']};
 `
+
 export const PaymentTitleContainer = styled.div`
   display: flex;
   gap: 0.5rem;

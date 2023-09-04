@@ -9,8 +9,19 @@ import {
   PaymentTitleContainer,
 } from './styles'
 import { defaultTheme } from '@/styles/themes/default'
+import { PaymentType } from '@/interfaces/PaymentType'
 
-export function PaymentTypeSelection() {
+interface PaymentTypeSelectionProps {
+  setPaymentOption: (paymentOption: PaymentType) => void
+}
+
+export function PaymentTypeSelection({
+  setPaymentOption,
+}: PaymentTypeSelectionProps) {
+  function handleSetPaymentOption(value: PaymentType) {
+    setPaymentOption(value)
+  }
+
   return (
     <PaymentContainer>
       <PaymentTitleContainer>
@@ -23,15 +34,24 @@ export function PaymentTypeSelection() {
         </PaymentTitle>
       </PaymentTitleContainer>
       <PaymentFormContainer>
-        <CreditCardButton>
+        <CreditCardButton
+          type="button"
+          onClick={() => handleSetPaymentOption(PaymentType.CREDIT_CARD)}
+        >
           <CreditCard size={16} color={defaultTheme.purple} />
           CREDIT CARD
         </CreditCardButton>
-        <DebitCardButton>
+        <DebitCardButton
+          type="button"
+          onClick={() => handleSetPaymentOption(PaymentType.DEBIT_CARD)}
+        >
           <Bank size={16} color={defaultTheme.purple} />
           DEBIT CARD
         </DebitCardButton>
-        <CashCardButton>
+        <CashCardButton
+          type="button"
+          onClick={() => handleSetPaymentOption(PaymentType.CASH)}
+        >
           <Money size={16} color={defaultTheme.purple} />
           CASH
         </CashCardButton>
