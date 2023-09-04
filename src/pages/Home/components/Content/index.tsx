@@ -1,4 +1,9 @@
+import { useContext, useState } from 'react'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+
+import { Coffee } from '@/reducers/reducer'
+import { coffees } from '@/utils/coffee-data'
+
 import {
   Buy,
   CartButton,
@@ -16,8 +21,7 @@ import {
   Title,
 } from './styles'
 import { defaultTheme } from '@/styles/themes/default'
-import { Coffee, coffees } from '@/utils/coffee-data'
-import { useState } from 'react'
+import { CoffeesContext } from '@/context/CoffeesContext'
 
 interface CoffeeCardProps {
   coffee: Coffee
@@ -25,6 +29,7 @@ interface CoffeeCardProps {
 
 function CoffeeCard({ coffee }: CoffeeCardProps) {
   const [quantity, setQuantity] = useState(1)
+  const { addCoffeeToCart } = useContext(CoffeesContext)
 
   function handleAddQuantity() {
     if (quantity === 9) return
@@ -37,10 +42,12 @@ function CoffeeCard({ coffee }: CoffeeCardProps) {
   }
 
   function handleAddToCart() {
-    // TODO: Update context
-
+    addCoffeeToCart(coffee, quantity)
     setQuantity(1)
   }
+
+  const isMinusButtonDisabled = quantity === 1
+  const isPlusButtonDisabled = quantity === 9
 
   return (
     <CoffeeContainer>
@@ -58,12 +65,18 @@ function CoffeeCard({ coffee }: CoffeeCardProps) {
         </PriceContainer>
         <div>
           <CounterContainer>
-            <MinusButton onClick={handleRemoveQuantity}>
-              <Minus size={14} weight="bold" color={defaultTheme.purple} />
+            <MinusButton
+              disabled={isMinusButtonDisabled}
+              onClick={handleRemoveQuantity}
+            >
+              <Minus size={14} weight="bold" />
             </MinusButton>
             <span>{quantity}</span>
-            <PlusButton onClick={handleAddQuantity}>
-              <Plus size={14} weight="bold" color={defaultTheme.purple} />
+            <PlusButton
+              disabled={isPlusButtonDisabled}
+              onClick={handleAddQuantity}
+            >
+              <Plus size={14} weight="bold" />
             </PlusButton>
           </CounterContainer>
           <CartButton onClick={handleAddToCart}>

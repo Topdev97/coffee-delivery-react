@@ -57,6 +57,7 @@ export const RemoveButton = styled.button`
 
   font-size: 12px;
 
+  color: ${(props) => props.theme.purple};
   background-color: ${(props) => props.theme['base-button']};
 
   transition: 100ms;
@@ -144,3 +145,28 @@ export const ConfirmButton = styled.button`
     font-size: 12px;
   }
 `
+
+export const CounterBaseButton = styled.button`
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-bottom: 2px;
+
+  color: ${(props) => props.theme.purple};
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+  transition: 100ms;
+
+  &:active {
+    color: ${(props) => props.theme['purple-dark']};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 50%;
+  }
+`
+
+export const MinusButton = styled(CounterBaseButton)``
+export const PlusButton = styled(CounterBaseButton)``

@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 
@@ -10,8 +11,13 @@ import {
   HeaderContainer,
   LocationContainer,
 } from './styles'
+import { CoffeesContext } from '@/context/CoffeesContext'
 
 export function Header() {
+  const { totalNumberOfCoffees } = useContext(CoffeesContext)
+
+  const isCartEmpty = totalNumberOfCoffees === 0
+
   return (
     <HeaderContainer>
       <NavLink to="/" title="Home">
@@ -29,7 +35,9 @@ export function Header() {
               weight="fill"
               color={defaultTheme['yellow-dark']}
             />
-            <CartNotification>0</CartNotification>
+            {!isCartEmpty && (
+              <CartNotification>{totalNumberOfCoffees}</CartNotification>
+            )}
           </CartContainer>
         </NavLink>
       </nav>
