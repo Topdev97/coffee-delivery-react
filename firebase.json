@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "gcrozariol-coffee-delivery",
     "public": "dist",
     "ignore": [
       "firebase.json",
