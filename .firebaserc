@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "gcrozariol-app"
+  },
+  "targets": {
+    "gcrozariol-app": {
+      "hosting": {
+        "coffee-delivery": [
+          "gcrozariol-coffee-delivery"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

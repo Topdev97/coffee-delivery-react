@@ -9,6 +9,7 @@ import {
   Title,
 } from './styles'
 import { PaymentType } from '@/interfaces/PaymentType'
+import { FormEvent } from 'react'
 
 export interface Address {
   zipCode: string
@@ -24,6 +25,20 @@ export interface SuccessState {
   address: Address
 }
 
+interface FormElements extends HTMLFormControlsCollection {
+  zipCode: HTMLInputElement
+  street: HTMLInputElement
+  number: HTMLInputElement
+  additionalInfo: HTMLInputElement
+  town: HTMLInputElement
+  city: HTMLInputElement
+  state: HTMLInputElement
+}
+
+interface YourFormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
 export function Checkout() {
   const navigate = useNavigate()
   let paymentType: PaymentType | undefined
@@ -32,23 +47,21 @@ export function Checkout() {
     paymentType = paymentSelected
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: FormEvent<YourFormElement>) {
     e.preventDefault()
 
-    if (!paymentType) {
-      return
-    }
+    if (!paymentType) return
 
     const data: SuccessState = {
       paymentType,
       address: {
-        zipCode: e.target.zipCode.value,
-        street: e.target.street.value,
-        number: e.target.number.value,
-        additionalInfo: e.target.additionalInfo.value,
-        town: e.target.town.value,
-        city: e.target.city.value,
-        state: e.target.state.value,
+        zipCode: e.currentTarget.zipCode.value,
+        street: e.currentTarget.street.value,
+        number: e.currentTarget.number.value,
+        additionalInfo: e.currentTarget.additionalInfo.value,
+        town: e.currentTarget.town.value,
+        city: e.currentTarget.city.value,
+        state: e.currentTarget.state.value,
       },
     }
 
