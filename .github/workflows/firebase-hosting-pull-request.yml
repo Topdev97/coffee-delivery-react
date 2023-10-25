@@ -26,9 +26,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-
-      - uses: actions/checkout@v3
-      - run: pnpm i && pnpm build
       
       - uses: actions/checkout@v3
       - run: pnpm i && pnpm build
@@ -37,3 +34,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GCROZARIOL_APP }}'
           projectId: gcrozariol-app
+          target: gcrozariol-coffee-delivery
