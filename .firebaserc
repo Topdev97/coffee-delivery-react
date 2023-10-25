@@ -5,8 +5,8 @@
   "targets": {
     "gcrozariol-app": {
       "hosting": {
-        "coffee-delivery": [
-          "gcrozariol-coffee-delivery"
+        "gcrozariol-coffee-delivery": [
+          "coffee-delivery"
         ]
       }
     }
